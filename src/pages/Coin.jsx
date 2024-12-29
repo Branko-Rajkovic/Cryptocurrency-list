@@ -4,6 +4,7 @@ import Loader from "../components/Loader";
 import CoinChart from "../components/CoinChart";
 import CoinHeader from "../components/CoinHeader";
 import CoinDetails from "../components/CoinDetails";
+import { convertArrayToCET } from "../utils/helper";
 
 export default function Coin() {
   const [coinData, setCoinData] = useState({});
@@ -17,7 +18,7 @@ export default function Coin() {
     const fetchCrypto = async () => {
       try {
         const response = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${params.id}/market_chart?vs_currency=usd&days=70`
+          `https://api.coingecko.com/api/v3/coins/${params.id}/market_chart?vs_currency=usd&days=7`
         );
         console.log(response);
         const data = await response.json();
@@ -48,7 +49,7 @@ export default function Coin() {
   }
 
   return (
-    <div>
+    <div className="p-8 bg-slate-700">
       {isLoading ? (
         <Loader />
       ) : (
@@ -57,8 +58,10 @@ export default function Coin() {
             imgSource={coinData.image.large}
             coinName={coinData.name}
             coinSymbol={coinData.symbol}
+            price={coinData.market_data.current_price.usd}
+            updated={coinData.last_updated}
           />
-          <CoinChart graphData={graphData} />
+          <CoinChart graphData={convertArrayToCET(graphData)} />
           <CoinDetails coinData={coinData} />
         </>
       )}

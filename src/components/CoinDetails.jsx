@@ -3,7 +3,7 @@ import Info from "./Info";
 
 export default function CoinDetails({ coinData }) {
   return (
-    <div>
+    <div className="bg-slate-200 p-4 text-md font-semibold">
       <Info title="Market cap rank" infoData={coinData.market_cap_rank} />
       <Info title="24h high" infoData={coinData.market_data.high_24h.usd} />
       <Info title="24h low" infoData={coinData.market_data.low_24h.usd} />

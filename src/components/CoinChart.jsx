@@ -5,13 +5,14 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 
 export default function CoinChart({ graphData }) {
   return (
-    <div>
+    <div className="m-4 p-4 rounded-md bg-slate-200 border-2">
       <AreaChart
-        width={500}
+        width={700}
         height={400}
         data={graphData}
         margin={{
@@ -21,11 +22,18 @@ export default function CoinChart({ graphData }) {
           bottom: 0,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid strokeDasharray="8 8" />
         <XAxis dataKey="0" />
-        <YAxis />
+        <YAxis interval="5" />
         <Tooltip />
-        <Area type="monotone" dataKey="1" stroke="#8884d8" fill="#8884d8" />
+        <Area
+          legendType="circle"
+          type="monotone"
+          dataKey="1"
+          stroke="#FDBA74"
+          strokeWidth="3"
+          fill="#FED7AA"
+        />
       </AreaChart>
     </div>
   );
