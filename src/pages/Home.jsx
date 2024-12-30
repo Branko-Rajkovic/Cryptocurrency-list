@@ -30,17 +30,24 @@ export default function Home() {
   }, []);
   return (
     <div className="p-4 bg-slate-400">
-      <Header />
+      <Header>
+        <img src="/blockchain_woman.png" className="w-full" />
+      </Header>
 
-      <h1 className="m-4 text-6xl text-slate-100 font-bold">
+      <h1 className="m-4 text-6xl font-bold text-slate-100">
         Trending Cryptocurrency
       </h1>
       <div className="m-2 font-bold text-sky-200">
+        <p className="text-xl text-sky-100">
+          List of coins based on user and trading activity. The data is retrived
+          from CoinGecko platform which features trending, most-searched and new
+          cryptocurrencies.
+        </p>
         <NavLink to="/crypto">
           <span className="underline underline-offset-4 text-sky-50">
             Click here
           </span>{" "}
-          to read more about cryptocurrency.
+          to read more about cryptocurrency trends.
         </NavLink>
       </div>
 
@@ -51,41 +58,36 @@ export default function Home() {
           {trendingCrypto.map((coin) => {
             return (
               <li
-                className="m-2 p-2 bg-slate-200 border-4 border-slate-100 flex gap-2"
+                className="flex gap-2 p-2 m-2 border-4 bg-slate-200 border-slate-100"
                 key={coin.item.coin_id}
               >
-                <div className="p-2 w-1/2 border-4 border-slate-100 bg-white">
+                <div className="w-1/2 p-2 bg-white border-4 border-slate-100">
                   <NavLink to={`/${coin.item.id}`}>
-                    <h3 className="font-bold text-sky-700 text-3xl px-4 w-1/4">
+                    <h3 className="w-1/4 px-4 text-3xl font-bold text-sky-700">
                       {coin.item.name}
                     </h3>
 
-                    <span className="text-slate-700">
-                      {coin.item.data.content
-                        ? coin.item.data.content.description
-                        : ""}
-                    </span>
-                    <p className="text-sky-600 font-semibold">
+                    <p className="font-semibold text-sky-600">
                       Click for more details
                     </p>
                   </NavLink>
                 </div>
 
-                <div className="p-4 bg-slate-50 flex flex-col items-center m-2 w-1/4 rounded-md">
+                <div className="flex flex-col items-center w-1/4 p-4 m-2 rounded-md bg-slate-50">
                   <img
                     src={`${coin.item.large}`}
                     className="w-1/2 rounded-full"
                   />
-                  <p className="text-slate-500 my-2 font-semibold">
+                  <p className="my-2 font-semibold text-slate-500">
                     Total Volume: {coin.item.data.total_volume}
                   </p>
                 </div>
-                <div className="w-1/4 flex flex-col items-center">
-                  <p className="m-2 px-4 font-sans font-bold text-slate-800">
+                <div className="flex flex-col items-center w-1/4">
+                  <p className="px-4 m-2 font-sans font-bold text-slate-800">
                     <span className="text-slate-400">Price: </span> $
                     {coin.item.data.price.toString().slice(0, 12)}
                   </p>
-                  <p className="m-2 px-4 text-sm font-bold text-slate-800">
+                  <p className="px-4 m-2 text-sm font-bold text-slate-800">
                     <span className="text-slate-400">Market Cap: </span>
 
                     {coin.item.data.market_cap}
