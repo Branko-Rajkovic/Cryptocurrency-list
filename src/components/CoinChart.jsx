@@ -5,12 +5,11 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
 } from "recharts";
 
 export default function CoinChart({ graphData }) {
   return (
-    <div className="p-4 m-4 border-2 rounded-md bg-slate-700">
+    <div className="p-4 m-4 border-2 rounded-md border-slate-600 bg-slate-700">
       <AreaChart
         width={700}
         height={400}

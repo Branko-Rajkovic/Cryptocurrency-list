@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import CoinChart from "../components/CoinChart";
 import CoinHeader from "../components/CoinHeader";
 import CoinDetails from "../components/CoinDetails";
 import { convertArrayToCET } from "../utils/helper";
-import Header from "../components/Header";
 
 export default function Coin() {
   const [coinData, setCoinData] = useState({});
   const [graphData, setGraphData] = useState([]);
+
   const [isLoading, setIsLoading] = useState(false);
   const params = useParams();
   console.log(params.id);
@@ -51,15 +51,11 @@ export default function Coin() {
 
   return (
     <div className="w-full p-8 bg-slate-700">
-      <Header>
-        <div className="flex items-center w-full mb-4">
-          <div className="flex flex-wrap items-stretch justify-between max-w-screen-xl p-4 mx-auto">
-            <div className="text-4xl text-slate-200">
-              Trending Cryptocurrency
-            </div>
-          </div>
+      <div className="flex items-center w-full mb-4">
+        <div className="flex flex-wrap items-stretch justify-between max-w-screen-xl p-4 mx-auto">
+          <div className="text-4xl text-slate-200">Trending Cryptocurrency</div>
         </div>
-      </Header>
+      </div>
 
       {isLoading ? (
         <Loader />

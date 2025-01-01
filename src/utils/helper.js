@@ -55,3 +55,11 @@ export function convertArrayToCET(arr) {
     return [cetTime, value];
   });
 }
+
+export function calculatePercentageOf64(percentage) {
+  if (percentage < 0 || percentage > 100) return null;
+  const percNumber = Number(percentage);
+  console.log(typeof percNumber);
+  console.log((Math.round((percNumber / 100) * 16) * 4).toString());
+  return Math.round((percNumber / 100) * 16) * 4;
+}

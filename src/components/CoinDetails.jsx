@@ -1,5 +1,7 @@
 import React from "react";
 import Info from "./Info";
+import PercentageBar from "./PercentageBar";
+import SentimentBar from "./SentimentBar";
 
 export default function CoinDetails({ coinData }) {
   return (
@@ -21,11 +23,21 @@ export default function CoinDetails({ coinData }) {
           infoData={`${coinData.market_data.price_change_percentage_1y} %`}
         />
       </div>
-      <div className="w-1/2 p-4 text-slate-200">
-        <img src={coinData.image.small} />
-        <h3 className="text-xl font-semibold">Description</h3>
-        {coinData.description.en ? coinData.description.en : ""}
+
+      <div className="flex-col w-1/2 p-4 text-slate-200">
+        <div className="h-1/2">
+          <SentimentBar
+            title="Sentiment"
+            sentiment={Math.round(coinData.sentiment_votes_up_percentage)}
+          />
+        </div>
+        <div>
+          <img src={coinData.image.small} />
+          <h3 className="text-xl font-semibold">Description</h3>
+          {coinData.description.en ? coinData.description.en : ""}
+        </div>
       </div>
+
       <div className="w-1/2 p-4 font-semibold text-orange-200 rounded-md bg-slate-600 text-md">
         <Info title="Asset Platform" infoData={coinData.asset_platform_id} />
 
@@ -40,6 +52,7 @@ export default function CoinDetails({ coinData }) {
         />
         <Info title="Max Supply" infoData={coinData.market_data.max_supply} />
       </div>
+
       <div className="w-1/2 p-4 font-semibold text-orange-200 rounded-md bg-slate-600 text-md">
         <Info
           title="Total Volume"

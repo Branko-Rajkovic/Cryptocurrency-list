@@ -12,12 +12,12 @@ export default function CoinHeader({
     <header className="flex items-center">
       <img
         src={imgSource}
-        className="rounded-full border-4 border-orange-300"
+        className="w-1/6 border-4 border-orange-300 rounded-full"
       />
-      <h1 className="text-5xl m-4 font-bold text-orange-200">
+      <h1 className="m-4 text-5xl font-bold text-orange-200">
         {coinName} ({coinSymbol})
       </h1>
-      <div className="m-2 px-4 font-sans font-bold text-slate-800">
+      <div className="px-4 m-2 font-sans font-bold text-slate-800">
         <span className="text-xl text-orange-300">
           Price: ${price.toString().slice(0, 12)}
         </span>

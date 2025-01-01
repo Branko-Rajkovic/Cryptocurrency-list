@@ -5,9 +5,7 @@ import Header from "../components/Header";
 export default function Cryptocurrency() {
   return (
     <div className="m-4">
-      <Header>
-        <img src="/image_header.png" />
-      </Header>
+      <img src="/image_header.png" />
 
       <Article />
     </div>
