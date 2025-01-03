@@ -2,9 +2,21 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Loader from "../components/Loader";
 import CoinInfoCard from "../components/CoinInfoCard";
+import { useFetchData } from "../hooks/useFetch";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  const [trendingCrypto, setTrendingCrypto] = useState([]);
+  // const { data, isLoading, error } = useFetchData(
+  //   "https://api.coingecko.com/api/v3/search/trending"
+  // );
+  // console.log(data);
+  // if (error) {
+  //   return <div>Error: {error.message}</div>;
+  // }
+
+  const [data, setData] = useState(() => {
+    return JSON.parse(localStorage.getItem("data"));
+  });
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -15,10 +27,10 @@ export default function Home() {
           "https://api.coingecko.com/api/v3/search/trending"
         );
         console.log(response);
-        const data = await response.json();
-        setTrendingCrypto(data.coins);
-        console.log(data.coins);
-        console.log(data);
+        const resData = await response.json();
+        setData(() => resData.coins);
+        console.log(resData.coins);
+        console.log(resData);
       } catch (err) {
         console.error(err);
       } finally {
@@ -27,8 +39,20 @@ export default function Home() {
     };
     fetchCrypto();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+
   return (
-    <div className="bg-slate-700">
+    <motion.div
+      className={`transition-opacity delay-500 ease-in-out ${
+        isLoading ? "opacity-0" : "opacity-100"
+      } bg-slate-700`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <img src="/trending_cr_title.png" className="inset-y-0 right-0 w-full" />
 
       <h1 className="m-4 text-2xl font-bold text-slate-100">
@@ -40,7 +64,7 @@ export default function Home() {
           from CoinGecko platform which features trending, most-searched and new
           cryptocurrencies.
         </p>
-        <NavLink to="/crypto">
+        <NavLink to="/crypto" viewTransition>
           <span className="underline underline-offset-4 text-sky-50">
             Click here
           </span>{" "}
@@ -52,7 +76,7 @@ export default function Home() {
         <Loader />
       ) : (
         <div className="flex flex-wrap m-4">
-          {trendingCrypto.map((coin) => {
+          {data?.map((coin) => {
             return (
               <div
                 className="w-1/3 p-2 border-4 rounded-md bg-slate-600 border-slate-700 text-slate-300"
@@ -71,6 +95,6 @@ export default function Home() {
           })}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

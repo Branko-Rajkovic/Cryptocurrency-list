@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Loader from "../components/Loader";
 import ExchangeCart from "../components/ExchangeCart";
+import { motion } from "framer-motion";
 
 export default function Exchanges() {
   const [exchangesList, setExchangesList] = useState([]);
@@ -25,7 +26,12 @@ export default function Exchanges() {
     fetchExchanges();
   }, []);
   return (
-    <div className="bg-slate-700">
+    <motion.div
+      className="bg-slate-700"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <img src="/trending_cr_title.png" className="inset-y-0 right-0 w-full" />
 
       <h1 className="m-4 text-2xl font-bold text-slate-100">
@@ -70,6 +76,6 @@ export default function Exchanges() {
           })}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

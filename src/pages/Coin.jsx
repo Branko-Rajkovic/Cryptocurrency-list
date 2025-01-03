@@ -5,6 +5,7 @@ import CoinChart from "../components/CoinChart";
 import CoinHeader from "../components/CoinHeader";
 import CoinDetails from "../components/CoinDetails";
 import { convertArrayToCET } from "../utils/helper";
+import { motion } from "framer-motion";
 
 export default function Coin() {
   const [coinData, setCoinData] = useState({});
@@ -50,7 +51,12 @@ export default function Coin() {
   }
 
   return (
-    <div className="w-full p-8 bg-slate-700">
+    <motion.div
+      className="w-full p-8 bg-slate-700"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className="flex items-center w-full mb-4">
         <div className="flex flex-wrap items-stretch justify-between max-w-screen-xl p-4 mx-auto">
           <div className="text-4xl text-slate-200">Trending Cryptocurrency</div>
@@ -74,6 +80,6 @@ export default function Coin() {
           <CoinDetails coinData={coinData} />
         </>
       )}
-    </div>
+    </motion.div>
   );
 }

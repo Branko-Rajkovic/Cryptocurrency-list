@@ -7,7 +7,9 @@ export default function Sidebar() {
       <img src="/lightning.png" />
       <ul className="p-4">
         <li>
-          <NavLink to="/exchanges">Crypto Exchanges</NavLink>
+          <NavLink to="/exchanges" viewTransition>
+            Crypto Exchanges
+          </NavLink>
         </li>
         <li>Top Decentralized Exchanges</li>
         <li>Coins Categories</li>

@@ -1,6 +1,6 @@
 import React from "react";
 import Info from "./Info";
-import PercentageBar from "./PercentageBar";
+
 import SentimentBar from "./SentimentBar";
 
 export default function CoinDetails({ coinData }) {
