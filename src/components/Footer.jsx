@@ -3,33 +3,33 @@ import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="mt-4 bg-white rounded-lg shadow dark:bg-slate-800">
-      <div className="w-full max-w-screen-xl p-4 mx-auto md:flex md:items-center md:justify-between">
-        <span className="text-sm text-slate-500 sm:text-center dark:text-slate-400">
+    <footer className="footer">
+      <div>
+        <span className="copyright">
           © 2025{" "}
-          <NavLink href="/" className="hover:underline">
+          <NavLink href="/" className="link-small">
             B™
           </NavLink>
           . All Rights Reserved.
         </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-slate-500 dark:text-slate-400 sm:mt-0">
+        <ul>
           <li>
-            <NavLink href="#" className="hover:underline me-4 md:me-6">
+            <NavLink href="/about" className="link-small">
               About
             </NavLink>
           </li>
           <li>
-            <NavLink href="#" className="hover:underline me-4 md:me-6">
+            <NavLink href="#" className="link-small">
               Privacy Policy
             </NavLink>
           </li>
           <li>
-            <NavLink href="#" className="hover:underline me-4 md:me-6">
+            <NavLink href="#" className="link-small">
               Licensing
             </NavLink>
           </li>
           <li>
-            <NavLink href="#" className="hover:underline">
+            <NavLink href="/contact" className="link-small">
               Contact
             </NavLink>
           </li>

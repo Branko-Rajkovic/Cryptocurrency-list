@@ -11,14 +11,12 @@ export default function CoinInfoCard({
 }) {
   return (
     <div>
-      <h3 className="mx-2 my-1 text-2xl font-bold text-orange-300">
-        {coinName}
-      </h3>
-      <div className="flex items-center p-2 border-2 rounded-md border-slate-400 text-slate-200">
-        <div className="mr-2">
+      <h3 className="h-2xl-orange">{coinName}</h3>
+      <div className="card-small-box">
+        <div className="w-1/3 mr-2">
           <img
             src={image}
-            className="w-1/3 border-4 border-orange-200 rounded-full"
+            className="border-4 border-orange-200 rounded-full"
           />
         </div>
 
@@ -31,11 +29,7 @@ export default function CoinInfoCard({
       </div>
       <p className="m-2">Current Price: ${currPrice}</p>
       <div className="m-2">
-        <NavLink
-          to={`/${coinId}`}
-          className="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-sky-600 dark:hover:bg-sky-700 focus:outline-none dark:focus:ring-sky-800"
-          viewTransition
-        >
+        <NavLink to={`/${coinId}`} className="button-sky" viewTransition>
           Click for Details
         </NavLink>
       </div>

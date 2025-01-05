@@ -9,19 +9,19 @@ export default function CoinHeader({
   updated,
 }) {
   return (
-    <header className="flex items-center">
+    <header className="card">
       <img
         src={imgSource}
         className="w-1/6 border-4 border-orange-300 rounded-full"
       />
-      <h1 className="m-4 text-5xl font-bold text-orange-200">
+      <h2 className="title-orange">
         {coinName} ({coinSymbol})
-      </h1>
-      <div className="px-4 m-2 font-sans font-bold text-slate-800">
-        <span className="text-xl text-orange-300">
+      </h2>
+      <div className="px-4 m-2">
+        <span className="orange-text-strong">
           Price: ${price.toString().slice(0, 12)}
         </span>
-        <div className="text-md text-slate-50">
+        <div className="sky-text-strong">
           Price updated on {convertToCET(updated)}
         </div>
       </div>

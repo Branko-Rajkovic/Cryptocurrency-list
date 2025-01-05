@@ -26,56 +26,54 @@ export default function Exchanges() {
     fetchExchanges();
   }, []);
   return (
-    <div className="w-auto min-h-screen bg-slate-700">
+    <div className="page-bg">
       <motion.div
-        className="bg-slate-700"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
         <header className="flex items-center">
-          <h2 className="w-1/2 text-4xl text-orange-300">
-            Cryptocurrency Exchanges
-          </h2>
-          <img src="/exchange_title.png" className="inset-y-0 right-0 w-1/2" />
+          <h2 className="w-1/2 title-orange">Cryptocurrency Exchanges</h2>
+          <img
+            src="/images/exchange_title.png"
+            className="inset-y-0 right-0 w-1/2"
+          />
         </header>
 
-        <h1 className="m-4 text-2xl font-bold text-slate-100">
+        <p className="sky-text-large">
           The following are the top cryptocurrency exchanges, according to
           traffic, liquidity, and trading volumes.
-        </h1>
-        <div className="m-2 font-bold text-sky-200">
-          <NavLink to="/crypto-trends">
-            <span className="underline underline-offset-4 text-sky-50">
-              Click here
-            </span>{" "}
-            to read more about cryptocurrency trends.
+        </p>
+        <div className="sky-text-large">
+          <NavLink to="/crypto-types">
+            <span className="link">Click here</span> to read more about
+            cryptocurrency types.
           </NavLink>
         </div>
 
         {isLoading ? (
           <Loader />
         ) : (
-          <div className="flex flex-wrap m-4">
-            {exchangesList.map((exchange) => {
+          <div className="flex flex-wrap">
+            {exchangesList?.map((exchange) => {
               return (
                 <div
-                  className="w-1/3 p-2 border-4 rounded-md bg-slate-600 border-slate-700 text-slate-300"
-                  key={exchange.exchangeId}
+                  className="w-1/3 card-outer-box"
+                  key={exchange?.exchangeId}
                 >
                   <ExchangeCart
-                    exchangeName={exchange.name}
-                    exchangeUrl={exchange.exchangeUrl}
+                    exchangeName={exchange?.name}
+                    exchangeUrl={exchange?.exchangeUrl}
                     percentTotalVolume={
                       Number(
-                        exchange.percentTotalVolume &&
-                          exchange.percentTotalVolume >= 0.001
+                        exchange?.percentTotalVolume &&
+                          exchange?.percentTotalVolume >= 0.001
                       )
-                        ? exchange.percentTotalVolume.slice(0, 6)
+                        ? exchange?.percentTotalVolume.slice(0, 6)
                         : "Lower than 0.001%"
                     }
-                    rank={exchange.rank}
-                    volumeUsd={exchange.volumeUsd}
+                    rank={exchange?.rank}
+                    volumeUsd={exchange?.volumeUsd}
                   />
                 </div>
               );

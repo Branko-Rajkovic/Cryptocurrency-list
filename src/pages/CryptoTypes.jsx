@@ -4,10 +4,8 @@ export default function CryptoTypes() {
   return (
     <div>
       <header className="flex items-center">
-        <h1 className="text-6xl font-semibold text-sky-300">
-          Types of Cryptocurrency
-        </h1>
-        <img src="/dif_types.png" className="w-2/3" />
+        <h1 className="title-sky">Types of Cryptocurrency</h1>
+        <img src="/images/coin_types_title.png" className="w-2/3" />
       </header>
       <div className="article">
         <h3>1. Bitcoin (BTC)</h3>
@@ -131,99 +129,69 @@ export default function CryptoTypes() {
         </ul>
 
         <h3>Summary Table</h3>
-        <table className="p-1 border-2 table-auto border-spacing-2 border-slate-500">
-          <thead className="font-semibold text-orange-300">
+        <table className="table-outer">
+          <thead className="thead-orange">
             <tr>
               <th>Type</th>
               <th>Purpose</th>
               <th>Examples</th>
             </tr>
           </thead>
-          <tbody className="text-sky-300">
+          <tbody>
             <tr>
-              <td className="p-1 border-2 border-slate-500">Bitcoin</td>
-              <td className="p-1 border-2 border-slate-500">
-                Peer-to-peer currency
-              </td>
-              <td className="p-1 border-2 border-slate-500">BTC</td>
+              <td className="tdata-sky">Bitcoin</td>
+              <td className="tdata-sky">Peer-to-peer currency</td>
+              <td className="tdata-sky">BTC</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">Altcoins</td>
-              <td className="p-1 border-2 border-slate-500">
-                Specialized use cases
-              </td>
-              <td className="p-1 border-2 border-slate-500">
-                ETH, LTC, ADA, DOT
-              </td>
+              <td className="tdata-sky">Altcoins</td>
+              <td className="tdata-sky">Specialized use cases</td>
+              <td className="tdata-sky">ETH, LTC, ADA, DOT</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">Stablecoins</td>
-              <td className="p-1 border-2 border-slate-500">
-                Minimize volatility
-              </td>
-              <td className="p-1 border-2 border-slate-500">USDT, USDC, DAI</td>
+              <td className="tdata-sky">Stablecoins</td>
+              <td className="tdata-sky">Minimize volatility</td>
+              <td className="tdata-sky">USDT, USDC, DAI</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">Utility Tokens</td>
-              <td className="p-1 border-2 border-slate-500">
-                Access services in a blockchain
-              </td>
-              <td className="p-1 border-2 border-slate-500">BAT, LINK</td>
+              <td className="tdata-sky">Utility Tokens</td>
+              <td className="tdata-sky">Access services in a blockchain</td>
+              <td className="tdata-sky">BAT, LINK</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">Security Tokens</td>
-              <td className="p-1 border-2 border-slate-500">
-                Asset ownership representation
-              </td>
-              <td className="p-1 border-2 border-slate-500">
-                Tokenized assets
-              </td>
+              <td className="tdata-sky">Security Tokens</td>
+              <td className="tdata-sky">Asset ownership representation</td>
+              <td className="tdata-sky">Tokenized assets</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">
-                Governance Tokens
-              </td>
-              <td className="p-1 border-2 border-slate-500">
-                Voting rights in a blockchain
-              </td>
-              <td className="p-1 border-2 border-slate-500">UNI, MKR</td>
+              <td className="tdata-sky">Governance Tokens</td>
+              <td className="tdata-sky">Voting rights in a blockchain</td>
+              <td className="tdata-sky">UNI, MKR</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">Meme Coins</td>
-              <td className="p-1 border-2 border-slate-500">
-                Fun and speculative trading
-              </td>
-              <td className="p-1 border-2 border-slate-500">DOGE, SHIB</td>
+              <td className="tdata-sky">Meme Coins</td>
+              <td className="tdata-sky">Fun and speculative trading</td>
+              <td className="tdata-sky">DOGE, SHIB</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">Privacy Coins</td>
-              <td className="p-1 border-2 border-slate-500">
-                Transaction privacy
-              </td>
-              <td className="p-1 border-2 border-slate-500">XMR, ZEC</td>
+              <td className="tdata-sky">Privacy Coins</td>
+              <td className="tdata-sky">Transaction privacy</td>
+              <td className="tdata-sky">XMR, ZEC</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">Exchange Tokens</td>
-              <td className="p-1 border-2 border-slate-500">
-                Benefits within exchange ecosystems
-              </td>
-              <td className="p-1 border-2 border-slate-500">BNB, FTT</td>
+              <td className="tdata-sky">Exchange Tokens</td>
+              <td className="tdata-sky">Benefits within exchange ecosystems</td>
+              <td className="tdata-sky">BNB, FTT</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">DeFi Tokens</td>
-              <td className="p-1 border-2 border-slate-500">
-                Decentralized financial services
-              </td>
-              <td className="p-1 border-2 border-slate-500">AAVE, COMP</td>
+              <td className="tdata-sky">DeFi Tokens</td>
+              <td className="tdata-sky">Decentralized financial services</td>
+              <td className="tdata-sky">AAVE, COMP</td>
             </tr>
             <tr>
-              <td className="p-1 border-2 border-slate-500">NFTs</td>
-              <td className="p-1 border-2 border-slate-500">
-                Ownership of unique digital assets
-              </td>
-              <td className="p-1 border-2 border-slate-500">
-                CryptoPunks, BAYC
-              </td>
+              <td className="tdata-sky">NFTs</td>
+              <td className="tdata-sky">Ownership of unique digital assets</td>
+              <td className="tdata-sky">CryptoPunks, BAYC</td>
             </tr>
           </tbody>
         </table>

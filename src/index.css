@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .article {
-  @apply text-justify;
+  @apply text-justify m-2;
 }
 
 .article h3 {
@@ -20,4 +20,120 @@
 
 .article ul {
   @apply m-4 text-lg list-disc text-slate-300;
+}
+
+.list {
+  @apply p-4 text-sky-200;
+}
+
+.list h3 {
+  @apply m-1 text-2xl font-semibold text-sky-300;
+}
+
+.header {
+  @apply bg-slate-200 dark:bg-slate-700 flex flex-wrap items-stretch justify-between max-w-screen-xl p-4 mx-auto;
+}
+
+.header ul {
+  @apply flex flex-col p-4 mt-4 font-medium md:p-0 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0;
+}
+
+.footer {
+  @apply mt-4 rounded-lg shadow bg-slate-100 dark:bg-slate-800;
+}
+
+.footer div {
+  @apply w-full max-w-screen-xl p-4 mx-auto md:flex md:items-center md:justify-between;
+}
+
+.footer ul {
+  @apply flex flex-wrap items-center mt-3 text-sm font-medium text-slate-500 dark:text-slate-400 sm:mt-0;
+}
+
+.copyright {
+  @apply text-sm text-slate-500 sm:text-center dark:text-slate-400;
+}
+
+.link {
+  @apply underline underline-offset-4 text-sky-50;
+}
+
+.link-small {
+  @apply hover:underline me-4 md:me-6;
+}
+
+.link-anime {
+  @apply p-2 mr-4 transition duration-200 ease-in-out delay-150 border-2 rounded-r-lg border-slate-700 bg-slate-600 hover:-translate-y-1 hover:scale-110 hover:bg-slate-500;
+}
+
+.chart {
+  @apply p-4 w-auto m-4 border-2 rounded-md border-slate-600 bg-slate-700;
+}
+
+.card {
+  @apply flex flex-wrap items-center;
+}
+
+.card .data-block {
+  @apply w-1/2 p-4 font-semibold text-orange-200 rounded-md bg-slate-600;
+}
+
+.card-small-box {
+  @apply flex items-center p-2 border-2 rounded-md border-slate-400 text-slate-200;
+}
+
+.card-outer-box {
+  @apply border-4 p-2 rounded-md bg-slate-600 border-slate-700 text-slate-300;
+}
+
+.button-sky {
+  @apply text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-sky-600 dark:hover:bg-sky-700 focus:outline-none dark:focus:ring-sky-800;
+}
+
+.h-2xl-orange {
+  @apply mx-2 my-1 text-2xl font-bold text-orange-300;
+}
+
+.h-2xl-sky {
+  @apply mx-2 my-1 text-2xl font-bold text-sky-100;
+}
+
+.page-bg {
+  @apply w-auto min-h-screen bg-slate-700;
+}
+
+.sentiment {
+  @apply flex-col w-1/2 p-4 text-slate-200;
+}
+
+.title-orange {
+  @apply m-4 text-5xl font-bold text-orange-200;
+}
+
+.title-sky {
+  @apply m-4 text-5xl font-bold text-sky-200;
+}
+
+.orange-text-strong {
+  @apply font-semibold text-orange-300;
+}
+
+.sky-text-strong {
+  @apply font-semibold  text-sky-300;
+}
+
+.sky-text-large {
+  @apply text-xl font-semibold text-sky-200;
+}
+
+.table-outer {
+  @apply p-1 border-2 table-auto border-spacing-2 border-slate-500;
+}
+
+.thead-orange {
+  @apply font-semibold text-orange-300;
+}
+
+.tdata-sky {
+  @apply text-sky-300 p-1 border-2 border-slate-500;
 }

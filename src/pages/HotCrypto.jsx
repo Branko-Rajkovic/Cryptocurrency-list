@@ -46,35 +46,29 @@ export default function HotCrypto() {
   // }, [data]);
 
   return (
-    <div className="w-auto min-h-screen bg-slate-700">
+    <div className="page-bg">
       <motion.div
-        className={"bg-slate-700"}
         transition={{ duration: 0.3, delay: 0.5, ease: "linear" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
         <div className="flex items-center">
-          <div className="w-1/2 text-6xl font-bold text-orange-300 text-end">
-            Hot Crypto
-          </div>
-          <img src="/hot_crypto_title1.png" className="right-0 w-1/2" />
+          <div className="w-1/2 title-orange">Hot Crypto</div>
+          <img src="/images/hot_crypto_title1.png" className="right-0 w-1/2" />
         </div>
 
-        <h1 className="m-4 text-2xl font-bold text-slate-100">
+        <h1 className="h-2xl-sky">
           Listed below are the hottest trending cryptocurrencies
         </h1>
-        <div className="m-2 font-bold text-sky-200">
-          <p className="text-xl text-sky-100">
-            List of coins based on user and trading activity. The data is
-            retrived from CoinGecko platform which features trending,
+        <div className="m-2 sky-text-large">
+          <p>
+            List of coins based on user and trading activity. Trending,
             most-searched and new cryptocurrencies.
           </p>
-          <NavLink to="/crypto-trends" viewTransition>
-            <span className="underline underline-offset-4 text-sky-50">
-              Click here
-            </span>{" "}
-            to read more about cryptocurrency trends.
+          <NavLink to="/crypto-trends">
+            <span className="link">Click here</span> to read more about
+            blockchain.
           </NavLink>
         </div>
 
@@ -84,17 +78,14 @@ export default function HotCrypto() {
           <div className="flex flex-wrap m-4">
             {data?.map((coin) => {
               return (
-                <div
-                  className="w-1/3 p-2 border-4 rounded-md bg-slate-600 border-slate-700 text-slate-300"
-                  key={coin.item.coin_id}
-                >
+                <div className="w-1/3 card-outer-box" key={coin?.item?.coin_id}>
                   <CoinInfoCard
-                    coinName={coin.item.name}
-                    currPrice={coin.item.data.price.toString().slice(0, 12)}
-                    image={coin.item.large}
-                    marketCap={coin.item.data.market_cap}
-                    totalVolume={coin.item.data.total_volume}
-                    coinId={coin.item.id}
+                    coinName={coin?.item?.name}
+                    currPrice={coin?.item?.data?.price.toString().slice(0, 12)}
+                    image={coin?.item?.large}
+                    marketCap={coin?.item?.data?.market_cap}
+                    totalVolume={coin?.item?.data?.total_volume}
+                    coinId={coin?.item?.id}
                   />
                 </div>
               );

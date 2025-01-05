@@ -2,8 +2,10 @@ import React from "react";
 
 export default function ArticleBlockChain() {
   return (
-    <div className="text-slate-200">
-      <h2 className="text-3xl font-semibold"> What is Blockchain?</h2>
+    <div className="article">
+      <h3 className="text-3xl font-semibold">
+        Blockchain, Decentralized Digital Ledger{" "}
+      </h3>
 
       <p>
         Blockchain is like a digital ledger or notebook that keeps track of
@@ -13,7 +15,7 @@ export default function ArticleBlockChain() {
 
       <p>---</p>
 
-      <h3 className="text-2xl font-semibold"> Here's How It Works:</h3>
+      <h3> Here's How It Works:</h3>
 
       <p>
         1. Blocks: Imagine writing a list of transactions on a single page. Once
@@ -41,7 +43,7 @@ export default function ArticleBlockChain() {
 
       <p>---</p>
 
-      <h3 className="text-2xl font-semibold">Real-Life Examples:</h3>
+      <h3>Real-Life Examples:</h3>
       <ul className="list-disc">
         <li>
           Cryptocurrencies: Bitcoin and Ethereum use blockchain to record who
@@ -58,7 +60,7 @@ export default function ArticleBlockChain() {
       </ul>
 
       <p>---</p>
-      <h3 className="text-2xl font-semibold">Why is Blockchain Special?</h3>
+      <h3>Why is Blockchain Special?</h3>
 
       <ul className="list-disc">
         <li>Transparent**: Everyone can see what&rsquo;s in the chain.</li>

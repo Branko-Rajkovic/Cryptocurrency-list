@@ -7,9 +7,8 @@ import { motion } from "framer-motion";
 
 export default function Layout() {
   return (
-    <div className="w-auto min-h-screen bg-slate-700">
+    <div className="page-bg">
       <motion.div
-        className="bg-slate-700"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}

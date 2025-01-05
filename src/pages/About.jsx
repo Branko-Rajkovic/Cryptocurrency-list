@@ -8,16 +8,16 @@ export default function About() {
           <h2 className="w-1/2 m-4 text-4xl text-center text-orange-300">
             Welcome to CryptoBay
           </h2>
-          <img src="/about_title.png" className="w-1/2" />
+          <img src="/images/about_title.png" className="w-1/2" />
         </div>
 
         <p>Your gateway to understanding cryptocurrency trading!</p>
       </header>
 
       <div>
-        <img src="/horizontal_rule.png" className="h-10" />
+        <img src="/images/horizontal_rule.png" className="h-10" />
         <h4>About Us</h4>
-        <img src="/horizontal_rule.png" className="h-10" />
+        <img src="/images/horizontal_rule.png" className="h-10" />
         <p>
           CryptoDemo is a platform designed to simplify the world of
           cryptocurrency for beginners and enthusiasts. Our goal is to provide
@@ -25,7 +25,7 @@ export default function About() {
           beginner-friendly guides to help you understand and start trading
           digital assets.
         </p>
-        <img src="/horizontal_rule.png" className="h-10" />
+        <img src="/images/horizontal_rule.png" className="h-10" />
 
         <h4>Our Mission</h4>
         <p>
@@ -34,7 +34,7 @@ export default function About() {
           the crypto space or a seasoned trader, our platform is here to support
           your journey.
         </p>
-        <img src="/horizontal_rule.png" className="h-10" />
+        <img src="/images/horizontal_rule.png" className="h-10" />
 
         <h4>What Makes Us Unique?</h4>
         <ul>
@@ -42,14 +42,9 @@ export default function About() {
 
           <li>A dedicated team passionate about blockchain technology.</li>
         </ul>
-        <img src="/horizontal_rule.png" className="h-10" />
+        <img src="/images/horizontal_rule.png" className="h-10" />
 
         <h4>Ready to Start Your Journey?</h4>
-        <p>
-          Explore our <a href="/cryptocurrencies">cryptocurrency listings</a>{" "}
-          and <a href="/trading-guides">trading guides</a> to begin trading with
-          confidence!
-        </p>
       </div>
     </div>
   );

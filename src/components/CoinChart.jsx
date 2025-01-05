@@ -9,10 +9,10 @@ import {
 
 export default function CoinChart({ graphData }) {
   return (
-    <div className="p-4 m-4 border-2 rounded-md border-slate-600 bg-slate-700">
+    <div className="chart">
       <AreaChart
-        width={700}
-        height={400}
+        width={400}
+        height={200}
         data={graphData}
         margin={{
           top: 10,
