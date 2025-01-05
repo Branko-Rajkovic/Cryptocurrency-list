@@ -28,7 +28,7 @@ export default function Header({ children }) {
               </li>
               <li>
                 <NavLink
-                  to="/"
+                  to="/contact"
                   className="px-2 py-1 rounded-md text-sky-300 hover:text-white hover:bg-sky-300"
                   viewTransition
                 >
