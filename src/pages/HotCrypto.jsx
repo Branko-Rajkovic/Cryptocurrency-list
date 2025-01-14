@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Loader from "../components/Loader";
 import CoinInfoCard from "../components/CoinInfoCard";
-import { useFetchData } from "../hooks/useFetch";
 import { motion } from "framer-motion";
 
 export default function HotCrypto() {

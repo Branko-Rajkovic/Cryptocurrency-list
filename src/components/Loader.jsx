@@ -1,9 +1,9 @@
 export default function Loader() {
   return (
     <div>
-      <span class="relative flex h-3 w-3">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+      <span className="relative flex w-3 h-3">
+        <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-sky-400"></span>
+        <span className="relative inline-flex w-3 h-3 rounded-full bg-sky-500"></span>
       </span>
     </div>
   );

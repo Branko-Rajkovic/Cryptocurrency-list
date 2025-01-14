@@ -72,14 +72,29 @@ export default function CoinVolume() {
                     className="w-1/3 card-outer-box"
                     key={coin?.CoinInfo?.Id}
                   >
-                    <CoinInfoCard
-                      coinName={coin?.CoinInfo?.FullName}
-                      currPrice={coin?.RAW?.USD?.PRICE.toString().slice(0, 12)}
-                      image={`https://www.cryptocompare.com/${coin.CoinInfo.ImageUrl}`}
-                      marketCap={coin?.DISPLAY?.USD?.MKTCAP}
-                      totalVolume={`24h ${coin?.DISPLAY?.USD.TOTALVOLUME24H}`}
-                      coinId={coin?.CoinInfo?.FullName}
+                    <h3 className="h-2xl-orange">{coin?.CoinInfo?.FullName}</h3>
+                    <img
+                      src={`https://www.cryptocompare.com/${coin.CoinInfo.ImageUrl}`}
+                      className="w-1/2 m-2"
                     />
+                    <p className="sky-text-strong">
+                      USD Price:{" "}
+                      <span className="orange-text-strong">
+                        {coin?.RAW?.USD?.PRICE.toString().slice(0, 12)}
+                      </span>
+                    </p>
+                    <p className="sky-text-strong">
+                      Marcet Cap:{" "}
+                      <span className="orange-text-strong">
+                        {coin?.DISPLAY?.USD?.MKTCAP}
+                      </span>
+                    </p>
+                    <p className="sky-text-strong">
+                      Total Volume 24h:{" "}
+                      <p className="orange-text-strong">
+                        {`24h ${coin?.DISPLAY?.USD.TOTALVOLUME24H}`}
+                      </p>
+                    </p>
                   </div>
                 );
               })}

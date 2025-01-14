@@ -44,9 +44,9 @@ export default function Coin() {
 
   if (!coinData || !graphData.length) {
     return (
-      <>
+      <div className="page-bg">
         <h1>NO data!</h1>
-      </>
+      </div>
     );
   }
 

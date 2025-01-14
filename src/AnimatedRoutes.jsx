@@ -14,6 +14,8 @@ import BasicTerms from "./pages/BasicTerms";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CryptoTypes from "./pages/CryptoTypes";
+import PageNotFound from "./pages/PageNotFound";
+import ErrorPage from "./pages/ErrorPage";
 
 export default function AnimatedRoutes() {
   const location = useLocation();
@@ -33,7 +35,9 @@ export default function AnimatedRoutes() {
             <Route path="/page" element={<Page />} />
             <Route path="/exchanges" element={<Exchanges />} />
             <Route path="/coin-volume" element={<CoinVolume />} />
+            <Route path="/error-page" element={<ErrorPage />} />
             <Route path="/:id" element={<Coin />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
       </AnimatePresence>
